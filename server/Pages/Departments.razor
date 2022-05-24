@@ -1,0 +1,64 @@
+﻿@page "/departments"
+@layout MainLayout
+@inherits Intranet.Pages.DepartmentsComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Intranet.Models.Kkk
+<PageTitle>Departments</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Departments">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenSplitButton Icon="get_app" style="margin-left: 10px; margin-bottom: 10px" Text="Export" Click="@Splitbutton0Click">
+          <ChildContent>
+            <RadzenSplitButtonItem Text="Excel" Value="xlsx">
+            </RadzenSplitButtonItem>
+            <RadzenSplitButtonItem Text="CSV" Value="csv">
+            </RadzenSplitButtonItem>
+          </ChildContent>
+        </RadzenSplitButton>
+        <RadzenTextBox Placeholder="Search ..." style="display: block; margin-bottom: 10px; width: 100%" Name="Textbox0" @oninput="@(async(args) => {search = $"{args.Value}";await grid0.GoToPage(0);await Load();})">
+        </RadzenTextBox>
+        <RadzenDataGrid @ref="grid0" AllowFiltering="true" FilterMode="Radzen.FilterMode.Advanced" AllowPaging="true"
+        AllowSorting="true" Data="@getDepartmentsResult" TItem="Intranet.Models.Kkk.Department" RowDoubleClick="@Grid0RowDoubleClick">
+          <Columns>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.Department" Property="DeptoId" SortProperty="Department1.Description" GroupProperty="Department1.Description" FilterProperty="Department1.Description" Title="Department">
+              <Template Context="data">
+              @(data.Department1?.Description)
+              </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.Department" Property="Description" Title="Description">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.Department" Property="Supervisor" Title="Supervisor">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.Department" Property="Extension1" Title="Extension 1">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.Department" Property="Extension2" Title="Extension 2">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.Department" Property="Extension3" Title="Extension 3">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.Department" Property="Extension4" Title="Extension 4">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.Department" Property="QtdStaff" Title="Qtd Staff">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.Department" Property="StaffId" Title="Staff Id">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.Department" Property="LastUpdate" FormatString="{0:MM/dd/yyyy}" Title="Last Update">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.Department" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+              <Template Context="intranetModelsKkkDepartment">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, intranetModelsKkkDepartment))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenDataGridColumn>
+          </Columns>
+        </RadzenDataGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

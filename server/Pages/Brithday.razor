@@ -1,0 +1,112 @@
+﻿@page "/birthday"
+
+@using Radzen
+@using Intranet.Models.Kkk
+@using Microsoft.EntityFrameworkCore
+@using Intranet.Controllers
+@using Intranet.Data
+@using System.Text.Encodings.Web;
+@using Microsoft.Data.SqlClient;
+@using System.Collections.Generic;
+@using System.Net.Http;
+@using System.Threading.Tasks;
+@using Microsoft.AspNetCore.Components
+@inherits Intranet.Pages.AppsComponent
+
+@inject KkkContext dbContext
+
+     <RadzenPanel AllowCollapse="false" Style="width: 900px; margin: 40px auto;">
+
+  
+          <RadzenTextBox Placeholder="Procurar ..." style="border-radius:5px; margin-bottom: 10px; width: 50%" 
+          Name="Textbox0" @oninput="@(async(args) => {search = $"{args.Value}";await dlist0.GoToPage(0);await Load();})">
+        </RadzenTextBox>
+                <RadzenDataList PageSize="6" WrapItems="true" AllowPaging="true" 
+                                Data="@orders"  TItem="App" 
+                                ShowPagingSummary="true" @ref="dlist0">
+
+                    <Template Context="order">
+
+                        <RadzenCard Style="width: 200px">
+                            <div class="row">
+
+                                <div class="col-md-6 text-truncate">
+                                    <RadzenBadge BadgeStyle="BadgeStyle.Danger" Text=@($"{order.AppId}") Class="mr-1" />
+                                    <b>@order.Category</b>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                   
+                                     <RadzenBadge BadgeStyle="BadgeStyle.Success"
+                                     Text=@($"{String.Format(new System.Globalization.CultureInfo("en-US"), "{0:C}", order.Name)}") 
+                                     />
+
+                                </div>
+                            </div>
+
+                            <hr style="border: none; background-color: rgba(0,0,0,.08); height: 1px; margin: 1rem 0;" />
+                            
+                            <div class="d-flex flex-row align-items-center">
+                               <div>
+                                  
+                                    <div style="font-size: 16px">
+                                   <RadzenLink Path="@order.Ulr" Text="@order.Description" target="_blank" />
+                                    </div>
+                                </div>
+                            </div>
+
+                           
+                        </RadzenCard>
+                    </Template>
+                </RadzenDataList>
+      
+ 
+    </RadzenPanel>
+
+@code {
+   
+    IEnumerable<App> orders;
+    IEnumerable<Department> departments;
+    IEnumerable<Staff> employees;
+    TabPosition tabPosition = TabPosition.Left;
+     int staffID = 15;
+
+    FilterCaseSensitivity filterCaseSensitivity = FilterCaseSensitivity.CaseInsensitive;
+    LogicalFilterOperator logicalFilterOperator = LogicalFilterOperator.Or;
+
+    protected override void OnInitialized()
+    {
+        //orders = dbContext.Apps.Include("Departments").ToList();
+        //await Task.Yield();
+        var query = dbContext.Apps.AsQueryable();
+        orders = query.ToList();
+
+       
+    }
+
+    
+  
+     async Task LoadApps(LoadDataArgs args)
+    {
+   
+        await Task.Yield();
+        var query = dbContext.Apps.AsQueryable();
+        // Perform paginv via Skip and Take.
+       // orders = query.Skip(args.Skip.Value).Take(args.Top.Value).ToList();
+    }
+
+     async Task LoadDepartment(LoadDataArgs args)
+    {
+   
+        await Task.Yield();
+        var depts = dbContext.Departments.AsQueryable();
+        // Perform paginv via Skip and Take.
+       departments = depts.Skip(args.Skip.Value).Take(args.Top.Value).ToList();
+
+    }
+
+     
+    void OnChange(int index)
+    {
+        Console.Write($"Tab with index {index} was selected.");
+    }
+}

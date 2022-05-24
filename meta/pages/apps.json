@@ -1,0 +1,328 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "heading",
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Apps"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "icon": "add_circle_outline",
+                  "name": "button0",
+                  "style": {
+                    "marginBottom": "10px"
+                  },
+                  "text": "Add",
+                  "type": "button",
+                  "events": {
+                    "click": [
+                      {
+                        "path": "add-app",
+                        "type": "popup",
+                        "then": [
+                          {
+                            "code": "await grid0.Reload();",
+                            "type": "execute"
+                          },
+                          {
+                            "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                            "type": "execute"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "events": {
+                    "click": [
+                      {
+                        "condition": "${event?.Value == \"csv\"}",
+                        "fileName": "Apps",
+                        "name": "KKK.getApps",
+                        "parameters": [
+                          {
+                            "name": "$filter",
+                            "value": "${(string.IsNullOrEmpty(grid0.Query.Filter)? \"true\" : grid0.Query.Filter)}"
+                          },
+                          {
+                            "name": "$orderby",
+                            "value": "${grid0.Query.OrderBy}"
+                          },
+                          {
+                            "name": "$expand",
+                            "value": ""
+                          },
+                          {
+                            "name": "$select",
+                            "value": "AppId,Name,Description,Ulr,ClassLogo,Category,LastUpdate"
+                          }
+                        ],
+                        "type": "export"
+                      },
+                      {
+                        "condition": "${event == null || event.Value == \"xlsx\"}",
+                        "fileName": "Apps",
+                        "format": "xlsx",
+                        "name": "KKK.getApps",
+                        "parameters": [
+                          {
+                            "name": "$filter",
+                            "value": "${(string.IsNullOrEmpty(grid0.Query.Filter)? \"true\" : grid0.Query.Filter)}"
+                          },
+                          {
+                            "name": "$orderby",
+                            "value": "${grid0.Query.OrderBy}"
+                          },
+                          {
+                            "name": "$expand",
+                            "value": ""
+                          },
+                          {
+                            "name": "$select",
+                            "value": "AppId,Name,Description,Ulr,ClassLogo,Category,LastUpdate"
+                          }
+                        ],
+                        "type": "export"
+                      }
+                    ]
+                  },
+                  "icon": "get_app",
+                  "items": [
+                    {
+                      "icon": "",
+                      "text": "Excel",
+                      "value": "xlsx"
+                    },
+                    {
+                      "icon": "",
+                      "text": "CSV",
+                      "value": "csv"
+                    }
+                  ],
+                  "name": "splitbutton0",
+                  "style": {
+                    "marginLeft": "10px",
+                    "marginBottom": "10px"
+                  },
+                  "text": "Export",
+                  "type": "splitbutton"
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "@oninput",
+                      "value": "@(async(args) => {search = $\"{args.Value}\";await grid0.GoToPage(0);await Load();})"
+                    }
+                  ],
+                  "name": "textbox0",
+                  "placeholder": "Search ...",
+                  "style": {
+                    "display": "block",
+                    "marginBottom": "10px",
+                    "width": "100%"
+                  },
+                  "type": "textbox",
+                  "value": ""
+                },
+                {
+                  "name": "grid0",
+                  "allowFiltering": true,
+                  "filterMode": "advanced",
+                  "allowPaging": true,
+                  "allowSorting": true,
+                  "data": "${getAppsResult}",
+                  "events": {
+                    "loadData": [],
+                    "rowDoubleClick": [
+                      {
+                        "parameters": [
+                          {
+                            "name": "AppId",
+                            "value": "${event.Data.AppId}"
+                          }
+                        ],
+                        "path": "edit-app",
+                        "type": "popup",
+                        "then": [
+                          {
+                            "code": "await grid0.Reload();",
+                            "type": "execute"
+                          },
+                          {
+                            "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                            "type": "execute"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "title": "",
+                  "columns": [
+                    {
+                      "property": "AppId",
+                      "title": "App Id"
+                    },
+                    {
+                      "property": "Name",
+                      "title": "Name"
+                    },
+                    {
+                      "property": "Description",
+                      "title": "Description"
+                    },
+                    {
+                      "property": "Ulr",
+                      "title": "Ulr"
+                    },
+                    {
+                      "property": "ClassLogo",
+                      "title": "Class Logo"
+                    },
+                    {
+                      "property": "Category",
+                      "title": "Category"
+                    },
+                    {
+                      "property": "LastUpdate",
+                      "formatString": "{0:MM/dd/yyyy}",
+                      "title": "Last Update"
+                    },
+                    {
+                      "filterable": false,
+                      "sortable": false,
+                      "width": "70px",
+                      "textAlign": "center",
+                      "template": [
+                        {
+                          "attributes": [
+                            {
+                              "name": "@onclick:stopPropagation",
+                              "value": true
+                            }
+                          ],
+                          "buttonStyle": "danger",
+                          "icon": "close",
+                          "name": "gridDeleteButton",
+                          "text": "",
+                          "size": "sm",
+                          "type": "button",
+                          "events": {
+                            "click": [
+                              {
+                                "condition": "await DialogService.Confirm(\"Are you sure you want to delete this record?\") == true",
+                                "error": [
+                                  {
+                                    "detail": "Unable to delete App",
+                                    "severity": "error",
+                                    "summary": "Error",
+                                    "type": "notify"
+                                  }
+                                ],
+                                "name": "KKK.deleteApp",
+                                "parameters": [
+                                  {
+                                    "name": "AppId",
+                                    "value": "${data.AppId}"
+                                  }
+                                ],
+                                "then": [
+                                  {
+                                    "code": "await grid0.Reload();",
+                                    "condition": "result != null",
+                                    "type": "execute"
+                                  }
+                                ],
+                                "type": "invoke"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "type": "datagrid",
+                  "itemType": "Intranet.Models.Kkk.App"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "condition": "string.IsNullOrEmpty(search)",
+        "name": "search",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      },
+      {
+        "name": "KKK.getApps",
+        "parameters": [
+          {
+            "name": "$filter",
+            "operator": "or",
+            "value": [
+              {
+                "operation": "contains",
+                "property": "Name",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "Description",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "Ulr",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "ClassLogo",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "Category",
+                "type": "string",
+                "value": "\"${search}\""
+              }
+            ]
+          }
+        ],
+        "then": [
+          {
+            "name": "getAppsResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<Intranet.Models.Kkk.App>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Apps",
+  "layout": "Main"
+}

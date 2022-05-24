@@ -1,0 +1,1221 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "components": [
+            {
+              "class": "col-md-9",
+              "components": [
+                {
+                  "name": "closeLabel",
+                  "style": {
+                    "fontWeight": "bold"
+                  },
+                  "text": "Item no longer available.",
+                  "type": "label",
+                  "visible": "${!canEdit}"
+                }
+              ],
+              "name": "col0",
+              "type": "col"
+            },
+            {
+              "class": "col-md-3",
+              "components": [
+                {
+                  "buttonStyle": "secondary",
+                  "events": {
+                    "click": [
+                      {
+                        "type": "close-popup"
+                      }
+                    ]
+                  },
+                  "icon": "",
+                  "name": "closeButton",
+                  "style": {
+                    "marginBottom": "20px"
+                  },
+                  "text": "Close",
+                  "type": "button",
+                  "visible": "${!canEdit}"
+                }
+              ],
+              "name": "col1",
+              "type": "col"
+            }
+          ],
+          "name": "row0",
+          "style": {},
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-9",
+              "components": [
+                {
+                  "name": "label0",
+                  "style": {
+                    "fontWeight": "bold"
+                  },
+                  "text": "Another user has made conflicting changes to one or more of the fields you have modified. Please reload.",
+                  "type": "label",
+                  "visible": "${hasChanges}"
+                }
+              ],
+              "name": "col0",
+              "type": "col"
+            },
+            {
+              "class": "col-md-3",
+              "components": [
+                {
+                  "buttonStyle": "secondary",
+                  "events": {
+                    "click": [
+                      {
+                        "code": "Kkk.Reset()",
+                        "type": "execute"
+                      },
+                      {
+                        "code": "await this.Load()",
+                        "type": "execute"
+                      }
+                    ]
+                  },
+                  "icon": "autorenew",
+                  "name": "button0",
+                  "style": {
+                    "marginBottom": "20px"
+                  },
+                  "text": "Reload",
+                  "type": "button",
+                  "visible": "${hasChanges}"
+                }
+              ],
+              "name": "col1",
+              "type": "col"
+            }
+          ],
+          "name": "row0",
+          "style": {},
+          "type": "row"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "type": "template-form",
+                  "name": "form0",
+                  "components": [
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Unit Code",
+                              "component": "UnitCode",
+                              "name": "UnitCodeLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "UnitCode",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.UnitCode}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Country",
+                              "component": "Country",
+                              "name": "CountryLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "Country",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.Country}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Surname",
+                              "component": "Surname",
+                              "name": "SurnameLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "Surname",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.Surname}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "First Name",
+                              "component": "FirstName",
+                              "name": "FirstNameLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "FirstName",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.FirstName}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Middle Name",
+                              "component": "MiddleName",
+                              "name": "MiddleNameLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "MiddleName",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.MiddleName}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Email",
+                              "component": "Email",
+                              "name": "EmailLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "Email",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.Email}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Date Birth",
+                              "component": "DateBirth",
+                              "name": "DateBirthLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "DateTime?",
+                              "dateFormat": "MM/dd/yyyy",
+                              "type": "datepicker",
+                              "name": "DateBirth",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.DateBirth}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Current Year",
+                              "component": "CurrentYear",
+                              "name": "CurrentYearLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "DateTime?",
+                              "dateFormat": "MM/dd/yyyy",
+                              "type": "datepicker",
+                              "name": "CurrentYear",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.CurrentYear}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Age",
+                              "component": "Age",
+                              "name": "AgeLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "int?",
+                              "type": "numeric",
+                              "name": "Age",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.Age}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Job Grade",
+                              "component": "JobGrade",
+                              "name": "JobGradeLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "JobGrade",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.JobGrade}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Grade Classification",
+                              "component": "GradeClassification",
+                              "name": "GradeClassificationLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "GradeClassification",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.GradeClassification}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Job Role",
+                              "component": "JobRole",
+                              "name": "JobRoleLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "JobRole",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.JobRole}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Sales Non Sales",
+                              "component": "SalesNonSales",
+                              "name": "SalesNonSalesLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "SalesNonSales",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.SalesNonSales}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Department",
+                              "component": "Department",
+                              "name": "DepartmentLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 100,
+                              "type": "textbox",
+                              "name": "Department",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.Department}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Location Branch",
+                              "component": "LocationBranch",
+                              "name": "LocationBranchLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 100,
+                              "type": "textbox",
+                              "name": "LocationBranch",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.LocationBranch}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Country Work",
+                              "component": "CountryWork",
+                              "name": "CountryWorkLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "CountryWork",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.CountryWork}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Country Origin",
+                              "component": "CountryOrigin",
+                              "name": "CountryOriginLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "CountryOrigin",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.CountryOrigin}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Employment Date",
+                              "component": "EmploymentDate",
+                              "name": "EmploymentDateLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 200,
+                              "type": "textbox",
+                              "name": "EmploymentDate",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.EmploymentDate}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Date Last Promotion",
+                              "component": "DateLastPromotion",
+                              "name": "DateLastPromotionLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "DateTime?",
+                              "dateFormat": "MM/dd/yyyy",
+                              "type": "datepicker",
+                              "name": "DateLastPromotion",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.DateLastPromotion}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Length Stay",
+                              "component": "LengthStay",
+                              "name": "LengthStayLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 10,
+                              "type": "textbox",
+                              "name": "LengthStay",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.LengthStay}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Sol Id",
+                              "component": "SolId",
+                              "name": "SolIdLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 10,
+                              "type": "textbox",
+                              "name": "SolId",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.SolId}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Mobile 1",
+                              "component": "Mobile1",
+                              "name": "Mobile1Label",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "Mobile1",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.Mobile1}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Mobile 2",
+                              "component": "Mobile2",
+                              "name": "Mobile2Label",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "Mobile2",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.Mobile2}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Extension",
+                              "component": "Extension",
+                              "name": "ExtensionLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "Extension",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.Extension}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Start Date",
+                              "component": "StartDate",
+                              "name": "StartDateLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "DateTime?",
+                              "dateFormat": "MM/dd/yyyy",
+                              "type": "datepicker",
+                              "name": "StartDate",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${staff.StartDate}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "type": "button",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "buttonStyle": "primary"
+                            },
+                            {
+                              "type": "button",
+                              "buttonStyle": "light",
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "close-popup"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to update Staff",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          },
+                          {
+                            "name": "hasChanges",
+                            "type": "set",
+                            "value": "result is DbUpdateConcurrencyException",
+                            "valueType": "bool"
+                          },
+                          {
+                            "name": "canEdit",
+                            "type": "set",
+                            "condition": "!(result is DbUpdateConcurrencyException)",
+                            "value": "false",
+                            "valueType": "bool"
+                          }
+                        ],
+                        "name": "KKK.updateStaff",
+                        "parameters": [
+                          {
+                            "name": "StaffId",
+                            "value": "${parameters.StaffId}"
+                          },
+                          {
+                            "name": "Staff",
+                            "value": "${staff}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "type": "close-popup",
+                            "result": "${staff}",
+                            "condition": ""
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "itemType": "Intranet.Models.Kkk.Staff",
+                  "data": "${staff}",
+                  "visible": "${staff != null && canEdit}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "hasChanges",
+        "type": "set",
+        "value": "false",
+        "valueType": "bool"
+      },
+      {
+        "name": "canEdit",
+        "type": "set",
+        "value": "true",
+        "valueType": "bool"
+      },
+      {
+        "name": "KKK.getStaffByStaffId",
+        "parameters": [
+          {
+            "name": "StaffId",
+            "value": "${parameters.StaffId}"
+          }
+        ],
+        "then": [
+          {
+            "name": "staff",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "Intranet.Models.Kkk.Staff"
+          }
+        ],
+        "error": [],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Edit Staff",
+  "layout": "Main"
+}

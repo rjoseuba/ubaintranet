@@ -1,0 +1,44 @@
+{
+  "cssFiles": [],
+  "dataSources": [
+    "KKK"
+  ],
+  "generator": "@radzen/blazor-server",
+  "https": false,
+  "ignore": [
+    ""
+  ],
+  "javaScriptFiles": [],
+  "layouts": [
+    "Login",
+    "Main"
+  ],
+  "logo": "",
+  "name": "Intranet",
+  "namespaces": [],
+  "navigation": [
+    "Apps",
+    "Departments",
+    "Staffs"
+  ],
+  "pages": [
+    "Apps",
+    "Add App",
+    "Edit App",
+    "Departments",
+    "Add Department",
+    "Edit Department",
+    "Staffs",
+    "Add Staff",
+    "Edit Staff"
+  ],
+  "port": 8000,
+  "serverLang": "cs",
+  "serverPort": 5000,
+  "serverProject": true,
+  "serverVersion": "6",
+  "startPage": "Apps",
+  "theme": "humanistic",
+  "themeSettings": null,
+  "title": "Intranet"
+}

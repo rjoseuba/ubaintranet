@@ -1,0 +1,618 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "components": [
+            {
+              "class": "col-md-9",
+              "components": [
+                {
+                  "name": "closeLabel",
+                  "style": {
+                    "fontWeight": "bold"
+                  },
+                  "text": "Item no longer available.",
+                  "type": "label",
+                  "visible": "${!canEdit}"
+                }
+              ],
+              "name": "col0",
+              "type": "col"
+            },
+            {
+              "class": "col-md-3",
+              "components": [
+                {
+                  "buttonStyle": "secondary",
+                  "events": {
+                    "click": [
+                      {
+                        "type": "close-popup"
+                      }
+                    ]
+                  },
+                  "icon": "",
+                  "name": "closeButton",
+                  "style": {
+                    "marginBottom": "20px"
+                  },
+                  "text": "Close",
+                  "type": "button",
+                  "visible": "${!canEdit}"
+                }
+              ],
+              "name": "col1",
+              "type": "col"
+            }
+          ],
+          "name": "row0",
+          "style": {},
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-9",
+              "components": [
+                {
+                  "name": "label0",
+                  "style": {
+                    "fontWeight": "bold"
+                  },
+                  "text": "Another user has made conflicting changes to one or more of the fields you have modified. Please reload.",
+                  "type": "label",
+                  "visible": "${hasChanges}"
+                }
+              ],
+              "name": "col0",
+              "type": "col"
+            },
+            {
+              "class": "col-md-3",
+              "components": [
+                {
+                  "buttonStyle": "secondary",
+                  "events": {
+                    "click": [
+                      {
+                        "code": "Kkk.Reset()",
+                        "type": "execute"
+                      },
+                      {
+                        "code": "await this.Load()",
+                        "type": "execute"
+                      }
+                    ]
+                  },
+                  "icon": "autorenew",
+                  "name": "button0",
+                  "style": {
+                    "marginBottom": "20px"
+                  },
+                  "text": "Reload",
+                  "type": "button",
+                  "visible": "${hasChanges}"
+                }
+              ],
+              "name": "col1",
+              "type": "col"
+            }
+          ],
+          "name": "row0",
+          "style": {},
+          "type": "row"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "type": "template-form",
+                  "name": "form0",
+                  "components": [
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Description",
+                              "component": "Description",
+                              "name": "DescriptionLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "type": "textbox",
+                              "name": "Description",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${department.Description}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "DescriptionRequiredValidator",
+                              "component": "Description",
+                              "text": "Description is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Supervisor",
+                              "component": "Supervisor",
+                              "name": "SupervisorLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 200,
+                              "type": "textbox",
+                              "name": "Supervisor",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${department.Supervisor}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Extension 1",
+                              "component": "Extension1",
+                              "name": "Extension1Label",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 200,
+                              "type": "textbox",
+                              "name": "Extension1",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${department.Extension1}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Extension 2",
+                              "component": "Extension2",
+                              "name": "Extension2Label",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "Extension2",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${department.Extension2}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Extension 3",
+                              "component": "Extension3",
+                              "name": "Extension3Label",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "Extension3",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${department.Extension3}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Extension 4",
+                              "component": "Extension4",
+                              "name": "Extension4Label",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "Extension4",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${department.Extension4}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Qtd Staff",
+                              "component": "QtdStaff",
+                              "name": "QtdStaffLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "type": "textbox",
+                              "name": "QtdStaff",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${department.QtdStaff}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Staff Id",
+                              "component": "StaffId",
+                              "name": "StaffIdLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "int?",
+                              "type": "numeric",
+                              "name": "StaffId",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${department.StaffId}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Last Update",
+                              "component": "LastUpdate",
+                              "name": "LastUpdateLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "DateTime?",
+                              "dateFormat": "MM/dd/yyyy",
+                              "type": "datepicker",
+                              "name": "LastUpdate",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${department.LastUpdate}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "type": "button",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "buttonStyle": "primary"
+                            },
+                            {
+                              "type": "button",
+                              "buttonStyle": "light",
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "close-popup"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to update Department",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          },
+                          {
+                            "name": "hasChanges",
+                            "type": "set",
+                            "value": "result is DbUpdateConcurrencyException",
+                            "valueType": "bool"
+                          },
+                          {
+                            "name": "canEdit",
+                            "type": "set",
+                            "condition": "!(result is DbUpdateConcurrencyException)",
+                            "value": "false",
+                            "valueType": "bool"
+                          }
+                        ],
+                        "name": "KKK.updateDepartment",
+                        "parameters": [
+                          {
+                            "name": "DeptoId",
+                            "value": "${parameters.DeptoId}"
+                          },
+                          {
+                            "name": "Department",
+                            "value": "${department}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "type": "close-popup",
+                            "result": "${department}",
+                            "condition": ""
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "itemType": "Intranet.Models.Kkk.Department",
+                  "data": "${department}",
+                  "visible": "${department != null && canEdit}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "hasChanges",
+        "type": "set",
+        "value": "false",
+        "valueType": "bool"
+      },
+      {
+        "name": "canEdit",
+        "type": "set",
+        "value": "true",
+        "valueType": "bool"
+      },
+      {
+        "name": "KKK.getDepartmentByDeptoId",
+        "parameters": [
+          {
+            "name": "DeptoId",
+            "value": "${parameters.DeptoId}"
+          }
+        ],
+        "then": [
+          {
+            "name": "department",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "Intranet.Models.Kkk.Department"
+          }
+        ],
+        "error": [],
+        "type": "invoke"
+      },
+      {
+        "name": "KKK.getDepartments",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getDepartmentsForDeptoIdResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<Intranet.Models.Kkk.Department>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Edit Department",
+  "layout": "Main"
+}

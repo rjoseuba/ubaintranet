@@ -1,0 +1,762 @@
+{
+  "info": {
+    "title": "KKK",
+    "x-type": "odata",
+    "x-connector": "mssql",
+    "x-connector-version": 15,
+    "x-concurrency": true,
+    "x-infer-aspnet": false,
+    "x-infer-tables": true,
+    "x-infer-relations": true,
+    "x-infer-views": true,
+    "x-infer-sps": true
+  },
+  "definitions": {
+    "App": {
+      "x-table": "dbo.Apps",
+      "resource": "Apps",
+      "required": [],
+      "properties": {
+        "AppId": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Name": {
+          "type": "string",
+          "length": 200
+        },
+        "Description": {
+          "type": "string",
+          "length": 200
+        },
+        "Ulr": {
+          "type": "string",
+          "length": 200
+        },
+        "ClassLogo": {
+          "type": "string",
+          "length": 50
+        },
+        "Category": {
+          "type": "string",
+          "length": 50
+        },
+        "LastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "date"
+        }
+      }
+    },
+    "Department": {
+      "x-table": "dbo.Department",
+      "resource": "Departments",
+      "required": [
+        "Description"
+      ],
+      "properties": {
+        "Department1": {
+          "type": "object",
+          "$ref": "#/definitions/Department"
+        },
+        "DeptoId": {
+          "x-identity": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-key": true,
+          "x-foreignKey": {
+            "parentTable": "Department",
+            "parentEntityType": "Department",
+            "type": "Department",
+            "principalKey": "DeptoId",
+            "name": "Department1",
+            "textProperty": "Description",
+            "navigationProperty": "Departments1"
+          },
+          "x-navigation": [
+            {
+              "inversePropertyName": "Department1",
+              "name": "Departments1",
+              "type": "Department"
+            }
+          ]
+        },
+        "Description": {
+          "x-nullable": false,
+          "type": "string"
+        },
+        "Supervisor": {
+          "type": "string",
+          "length": 200
+        },
+        "Extension1": {
+          "type": "string",
+          "length": 200
+        },
+        "Extension2": {
+          "type": "string",
+          "length": 50
+        },
+        "Extension3": {
+          "type": "string",
+          "length": 50
+        },
+        "Extension4": {
+          "type": "string",
+          "length": 50
+        },
+        "QtdStaff": {
+          "type": "string"
+        },
+        "StaffId": {
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "LastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "date"
+        },
+        "Departments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Department"
+          }
+        }
+      }
+    },
+    "Staff": {
+      "x-table": "dbo.Staff",
+      "resource": "Staffs",
+      "required": [],
+      "properties": {
+        "StaffId": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "UnitCode": {
+          "type": "string",
+          "length": 50
+        },
+        "Country": {
+          "type": "string",
+          "length": 50
+        },
+        "Surname": {
+          "type": "string",
+          "length": 50
+        },
+        "FirstName": {
+          "type": "string",
+          "length": 50
+        },
+        "MiddleName": {
+          "type": "string",
+          "length": 50
+        },
+        "Email": {
+          "type": "string",
+          "length": 50
+        },
+        "DateBirth": {
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "date"
+        },
+        "CurrentYear": {
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "date"
+        },
+        "Age": {
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "JobGrade": {
+          "type": "string",
+          "length": 50
+        },
+        "GradeClassification": {
+          "type": "string",
+          "length": 50
+        },
+        "JobRole": {
+          "type": "string",
+          "length": 50
+        },
+        "SalesNonSales": {
+          "type": "string",
+          "length": 50
+        },
+        "Department": {
+          "type": "string",
+          "length": 100
+        },
+        "LocationBranch": {
+          "type": "string",
+          "length": 100
+        },
+        "CountryWork": {
+          "type": "string",
+          "length": 50
+        },
+        "CountryOrigin": {
+          "type": "string",
+          "length": 50
+        },
+        "EmploymentDate": {
+          "type": "string",
+          "length": 200
+        },
+        "DateLastPromotion": {
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "date"
+        },
+        "LengthStay": {
+          "type": "string",
+          "length": 10
+        },
+        "SolId": {
+          "type": "string",
+          "length": 10
+        },
+        "Mobile1": {
+          "type": "string",
+          "length": 50
+        },
+        "Mobile2": {
+          "type": "string",
+          "length": 50
+        },
+        "Extension": {
+          "type": "string",
+          "length": 50
+        },
+        "StartDate": {
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "date"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/Apps": {
+      "get": {
+        "operationId": "getApps",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/App"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createApp",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "App",
+            "schema": {
+              "$ref": "#/definitions/App"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/App"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Departments": {
+      "get": {
+        "operationId": "getDepartments",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Department"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createDepartment",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Department",
+            "schema": {
+              "$ref": "#/definitions/Department"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Department"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Staffs": {
+      "get": {
+        "operationId": "getStaffs",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Staff"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createStaff",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Staff",
+            "schema": {
+              "$ref": "#/definitions/Staff"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Staff"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Apps({AppId})": {
+      "delete": {
+        "operationId": "deleteApp",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AppId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getAppByAppId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AppId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/App"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateApp",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AppId",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "App",
+            "schema": {
+              "$ref": "#/definitions/App"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelAppChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "App",
+            "schema": {
+              "$ref": "#/definitions/App"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Departments({DeptoId})": {
+      "delete": {
+        "operationId": "deleteDepartment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "DeptoId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getDepartmentByDeptoId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "DeptoId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Department"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateDepartment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "DeptoId",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Department",
+            "schema": {
+              "$ref": "#/definitions/Department"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelDepartmentChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Department",
+            "schema": {
+              "$ref": "#/definitions/Department"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Staffs({StaffId})": {
+      "delete": {
+        "operationId": "deleteStaff",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "StaffId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getStaffByStaffId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "StaffId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Staff"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateStaff",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "StaffId",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Staff",
+            "schema": {
+              "$ref": "#/definitions/Staff"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelStaffChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Staff",
+            "schema": {
+              "$ref": "#/definitions/Staff"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "basePath": "/odata/KKK",
+  "host": "localhost:5000",
+  "schemes": [
+    "http"
+  ]
+}

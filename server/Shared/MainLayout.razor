@@ -1,0 +1,75 @@
+﻿@inherits Intranet.Layouts.MainLayoutComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Intranet.Models.Kkk
+@using Intranet.Pages
+<RadzenDialog />
+<RadzenNotification />
+<RadzenTooltip />
+<RadzenContextMenu />
+
+<RadzenLayout>
+  <ChildContent>
+    <RadzenHeader Style="background-color:#CC0022">
+      <ChildContent>
+        <div class="row justify-content-start align-items-center">
+          <div class="col-5 d-flex align-items-center">
+            <RadzenSidebarToggle Click="@SidebarToggle0Click">
+            </RadzenSidebarToggle>
+            
+            <RadzenImage Path="assets/UBA_logo.png"></RadzenImage>
+          </div>
+          <div class="col-3">
+        <RadzenLabel Text="INTRANET MOZAMBIQUE" Style="color:white; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:16px; font-weight:bold"> </RadzenLabel>
+
+          </div>
+          <div class="col-4 text-right">
+
+    <RadzenProfileMenu Style="background-color:#CC0022">
+        <Template>
+            <RadzenGravatar Email="user@example.com">
+            </RadzenGravatar>
+        </Template>
+        <ChildContent>
+            <RadzenProfileMenuItem Text="Administração" Path="login" Icon="account_circle"></RadzenProfileMenuItem>
+            <RadzenProfileMenuItem Text="Contactos de Emergencia" Path="dialog" Icon="perm_media"></RadzenProfileMenuItem>
+            <RadzenProfileMenuItem Text="Notificações" Path="notification" Icon="announcement"></RadzenProfileMenuItem>
+        </ChildContent>
+    
+    </RadzenProfileMenu>
+          </div>
+        </div>
+      </ChildContent>
+    </RadzenHeader>
+
+    <RadzenBody @ref="body0">
+      <ChildContent>
+        <RadzenContentContainer Name="main">
+        @Body
+        </RadzenContentContainer>
+      </ChildContent>
+    </RadzenBody>
+
+    <RadzenSidebar @ref="sidebar0" Responsive="true" AllowCollapse="true" style="width: 100%">
+      <ChildContent>
+        <RadzenPanelMenu style="width: 180px">
+          <ChildContent>
+
+                <RadzenPanelMenuItem Text="Home" Path="home" Icon="home">
+                </RadzenPanelMenuItem>
+
+                  <RadzenPanelMenuItem Text="Departments" Path="departments" Icon="account_balance_wallet">
+                </RadzenPanelMenuItem>
+                 <RadzenPanelMenuItem Text="App Store" Path="apps" Icon="line_style">
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Staffs" Path="staffs" Icon="account_circle">
+                 </RadzenPanelMenuItem>
+
+            </ChildContent>
+        </RadzenPanelMenu>
+      </ChildContent>
+    </RadzenSidebar>
+
+  </ChildContent>
+</RadzenLayout>

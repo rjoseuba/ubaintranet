@@ -1,0 +1,356 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "heading",
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Departments"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "icon": "add_circle_outline",
+                  "name": "button0",
+                  "style": {
+                    "marginBottom": "10px"
+                  },
+                  "text": "Add",
+                  "type": "button",
+                  "events": {
+                    "click": [
+                      {
+                        "path": "add-department",
+                        "type": "popup",
+                        "then": [
+                          {
+                            "code": "await grid0.Reload();",
+                            "type": "execute"
+                          },
+                          {
+                            "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                            "type": "execute"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "events": {
+                    "click": [
+                      {
+                        "condition": "${event?.Value == \"csv\"}",
+                        "fileName": "Departments",
+                        "name": "KKK.getDepartments",
+                        "parameters": [
+                          {
+                            "name": "$filter",
+                            "value": "${(string.IsNullOrEmpty(grid0.Query.Filter)? \"true\" : grid0.Query.Filter)}"
+                          },
+                          {
+                            "name": "$orderby",
+                            "value": "${grid0.Query.OrderBy}"
+                          },
+                          {
+                            "name": "$expand",
+                            "value": ""
+                          },
+                          {
+                            "name": "$select",
+                            "value": "Department1.Description as Department1Description,Description,Supervisor,Extension1,Extension2,Extension3,Extension4,QtdStaff,StaffId,LastUpdate"
+                          }
+                        ],
+                        "type": "export"
+                      },
+                      {
+                        "condition": "${event == null || event.Value == \"xlsx\"}",
+                        "fileName": "Departments",
+                        "format": "xlsx",
+                        "name": "KKK.getDepartments",
+                        "parameters": [
+                          {
+                            "name": "$filter",
+                            "value": "${(string.IsNullOrEmpty(grid0.Query.Filter)? \"true\" : grid0.Query.Filter)}"
+                          },
+                          {
+                            "name": "$orderby",
+                            "value": "${grid0.Query.OrderBy}"
+                          },
+                          {
+                            "name": "$expand",
+                            "value": ""
+                          },
+                          {
+                            "name": "$select",
+                            "value": "Department1.Description as Department1Description,Description,Supervisor,Extension1,Extension2,Extension3,Extension4,QtdStaff,StaffId,LastUpdate"
+                          }
+                        ],
+                        "type": "export"
+                      }
+                    ]
+                  },
+                  "icon": "get_app",
+                  "items": [
+                    {
+                      "icon": "",
+                      "text": "Excel",
+                      "value": "xlsx"
+                    },
+                    {
+                      "icon": "",
+                      "text": "CSV",
+                      "value": "csv"
+                    }
+                  ],
+                  "name": "splitbutton0",
+                  "style": {
+                    "marginLeft": "10px",
+                    "marginBottom": "10px"
+                  },
+                  "text": "Export",
+                  "type": "splitbutton"
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "@oninput",
+                      "value": "@(async(args) => {search = $\"{args.Value}\";await grid0.GoToPage(0);await Load();})"
+                    }
+                  ],
+                  "name": "textbox0",
+                  "placeholder": "Search ...",
+                  "style": {
+                    "display": "block",
+                    "marginBottom": "10px",
+                    "width": "100%"
+                  },
+                  "type": "textbox",
+                  "value": ""
+                },
+                {
+                  "name": "grid0",
+                  "allowFiltering": true,
+                  "filterMode": "advanced",
+                  "allowPaging": true,
+                  "allowSorting": true,
+                  "data": "${getDepartmentsResult}",
+                  "events": {
+                    "loadData": [],
+                    "rowDoubleClick": [
+                      {
+                        "parameters": [
+                          {
+                            "name": "DeptoId",
+                            "value": "${event.Data.DeptoId}"
+                          }
+                        ],
+                        "path": "edit-department",
+                        "type": "popup",
+                        "then": [
+                          {
+                            "code": "await grid0.Reload();",
+                            "type": "execute"
+                          },
+                          {
+                            "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                            "type": "execute"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "title": "",
+                  "columns": [
+                    {
+                      "property": "DeptoId",
+                      "sortProperty": "Department1.Description",
+                      "groupProperty": "Department1.Description",
+                      "filterProperty": "Department1.Description",
+                      "template": "${data.Department1?.Description}",
+                      "title": "Department"
+                    },
+                    {
+                      "property": "Description",
+                      "title": "Description"
+                    },
+                    {
+                      "property": "Supervisor",
+                      "title": "Supervisor"
+                    },
+                    {
+                      "property": "Extension1",
+                      "title": "Extension 1"
+                    },
+                    {
+                      "property": "Extension2",
+                      "title": "Extension 2"
+                    },
+                    {
+                      "property": "Extension3",
+                      "title": "Extension 3"
+                    },
+                    {
+                      "property": "Extension4",
+                      "title": "Extension 4"
+                    },
+                    {
+                      "property": "QtdStaff",
+                      "title": "Qtd Staff"
+                    },
+                    {
+                      "property": "StaffId",
+                      "title": "Staff Id"
+                    },
+                    {
+                      "property": "LastUpdate",
+                      "formatString": "{0:MM/dd/yyyy}",
+                      "title": "Last Update"
+                    },
+                    {
+                      "filterable": false,
+                      "sortable": false,
+                      "width": "70px",
+                      "textAlign": "center",
+                      "template": [
+                        {
+                          "attributes": [
+                            {
+                              "name": "@onclick:stopPropagation",
+                              "value": true
+                            }
+                          ],
+                          "buttonStyle": "danger",
+                          "icon": "close",
+                          "name": "gridDeleteButton",
+                          "text": "",
+                          "size": "sm",
+                          "type": "button",
+                          "events": {
+                            "click": [
+                              {
+                                "condition": "await DialogService.Confirm(\"Are you sure you want to delete this record?\") == true",
+                                "error": [
+                                  {
+                                    "detail": "Unable to delete Department",
+                                    "severity": "error",
+                                    "summary": "Error",
+                                    "type": "notify"
+                                  }
+                                ],
+                                "name": "KKK.deleteDepartment",
+                                "parameters": [
+                                  {
+                                    "name": "DeptoId",
+                                    "value": "${data.DeptoId}"
+                                  }
+                                ],
+                                "then": [
+                                  {
+                                    "code": "await grid0.Reload();",
+                                    "condition": "result != null",
+                                    "type": "execute"
+                                  }
+                                ],
+                                "type": "invoke"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "type": "datagrid",
+                  "itemType": "Intranet.Models.Kkk.Department"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "condition": "string.IsNullOrEmpty(search)",
+        "name": "search",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      },
+      {
+        "name": "KKK.getDepartments",
+        "parameters": [
+          {
+            "name": "$filter",
+            "operator": "or",
+            "value": [
+              {
+                "operation": "contains",
+                "property": "Description",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "Supervisor",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "Extension1",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "Extension2",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "Extension3",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "Extension4",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "QtdStaff",
+                "type": "string",
+                "value": "\"${search}\""
+              }
+            ]
+          }
+        ],
+        "then": [
+          {
+            "name": "getDepartmentsResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<Intranet.Models.Kkk.Department>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Departments",
+  "layout": "Main"
+}

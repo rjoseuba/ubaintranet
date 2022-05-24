@@ -1,0 +1,55 @@
+﻿@page "/apps"
+@layout MainLayout
+@inherits Intranet.Pages.AppsComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Intranet.Models.Kkk
+<PageTitle>Apps</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Apps">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenSplitButton Icon="get_app" style="margin-left: 10px; margin-bottom: 10px" Text="Export" Click="@Splitbutton0Click">
+          <ChildContent>
+            <RadzenSplitButtonItem Text="Excel" Value="xlsx">
+            </RadzenSplitButtonItem>
+            <RadzenSplitButtonItem Text="CSV" Value="csv">
+            </RadzenSplitButtonItem>
+          </ChildContent>
+        </RadzenSplitButton>
+        <RadzenTextBox Placeholder="Search ..." style="display: block; margin-bottom: 10px; width: 100%"
+        Name="Textbox0" @oninput="@(async(args) => {search = $"{args.Value}";await grid0.GoToPage(0);await Load();})">
+        </RadzenTextBox>
+        <RadzenDataGrid @ref="grid0" AllowFiltering="true" FilterMode="Radzen.FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getAppsResult" TItem="Intranet.Models.Kkk.App" RowDoubleClick="@Grid0RowDoubleClick">
+          <Columns>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.App" Property="AppId" Title="App Id">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.App" Property="Name" Title="Name">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.App" Property="Description" Title="Description">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.App" Property="Ulr" Title="Ulr">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.App" Property="ClassLogo" Title="Class Logo">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.App" Property="Category" Title="Category">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.App" Property="LastUpdate" FormatString="{0:MM/dd/yyyy}" Title="Last Update">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Intranet.Models.Kkk.App" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+              <Template Context="intranetModelsKkkApp">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, intranetModelsKkkApp))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenDataGridColumn>
+          </Columns>
+        </RadzenDataGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>
