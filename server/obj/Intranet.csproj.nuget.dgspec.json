@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\Intranet.csproj": {}
+    "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\Intranet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\Intranet.csproj": {
+    "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\Intranet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\Intranet.csproj",
+        "projectUniqueName": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\Intranet.csproj",
         "projectName": "Intranet",
-        "projectPath": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\Intranet.csproj",
+        "projectPath": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\Intranet.csproj",
         "packagesPath": "C:\\Users\\Raimundo Jose\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\obj\\",
+        "outputPath": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Raimundo Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",

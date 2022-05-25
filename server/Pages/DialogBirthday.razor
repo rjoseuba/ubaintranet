@@ -58,7 +58,10 @@
                         Data="@mBirthday" TItem="Staff" ColumnWidth="100px" Class="mt-3">
                 <Columns>
                     <RadzenDataGridColumn TItem="Staff" Property="Surname" Title="Nome" />
-                    <RadzenDataGridColumn TItem="Staff" Property="DateBirth" Title="Aniversario" />
+                    <RadzenDataGridColumn TItem="Staff" Property="DateBirth" Title="Aniversario">
+                       
+            </RadzenDataGridColumn>
+
                     <RadzenDataGridColumn TItem="Staff" Property="Extension" Title="Extensão" />
                     <RadzenDataGridColumn TItem="Staff" Property="Department" Title="Departmento" />
                 
@@ -74,22 +77,33 @@
 
     [Parameter] public DateTime DayBirthday { get; set; }
     [Parameter] public int StaffId { get; set; }
+    [Parameter] public string Month { get; set; }
 
     Staff staff;
-    //string date = DateTime.UtcNow.ToString("");
+    string myDateTime = DateTime.Now.Month.ToString();
+    DateTime todays = DateTime.Now;
 
     DateTime today = DateTime.ParseExact("20220501","yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture);
-    
+
     IEnumerable<Staff> birthday;
     IEnumerable<Staff> mBirthday;
 
-    //int staffId = 110;
-     
+    int staffId = 115;
     protected override void OnInitialized()
     {
-       //birthday = dbContext.Staffs.Where(s => s.DateBirth == DayBirthday).ToList();
-       mBirthday = dbContext.Staffs.Where(s => s.DateBirth <= today).ToList();
-       staff = dbContext.Staffs.Where(o => o.StaffId == StaffId).FirstOrDefault();
+        //birthday = dbContext.Staffs.Where(s => s.DateBirth == DayBirthday).ToList();
+        mBirthday = dbContext.Staffs.Where(s => s.DateBirth <= today).ToList();
+        staff = dbContext.Staffs.Where(o => o.StaffId == StaffId).FirstOrDefault();
+    }
+
+    public int getMonth(DateTime d)
+    {
+        return int.Parse(d.Month.ToString());
+    }
+
+    public string getStringMonth(DateTime data)
+    {
+        return  data.Month.ToString("MM");
     }
 }
 

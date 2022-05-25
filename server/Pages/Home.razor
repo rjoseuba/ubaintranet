@@ -27,19 +27,15 @@
 
 <PageTitle>Home</PageTitle>
 
-<RadzenCard Style=" width: fit-content; min-width: 80%;" Class="mt-3 mx-auto">
-    <RadzenMenu Click="OnParentClicked" Style="">
+<RadzenCard Style=" width: fit-content; min-width: 90%;" Class="mt-3 mx-auto">
+    <RadzenMenu  Style="">
 
         <div class="col-md-6">
             <RadzenAutoComplete Placeholder="Buscar funcionario..." Style="width: 100%;" />
           </div>
 
-        
           <div class="col-md-6">
-            <!--RadzenButton Text="Actualizar" Icon="cached" 
-            Click="@Reset" Style="margin-bottom: 20px; border-radius:5px" /--> 
-
-              <RadzenImage Path="images/birthday.png" 
+                    <RadzenImage Path="images/birthday.png" 
                     Class="rounded-circle float-left mr-3" Click=@(() => OpenBrithday())
                     Style="width: 40px; height: 40px; cursor:pointer" />
 
@@ -47,64 +43,55 @@
                     Class="rounded-circle float-left mr-3" Click=@(() => OpenBrithday())
                     Style="width: 40px; height: 40px; cursor:pointer" />
 
-                            <RadzenImage Path="images/update1.png" 
-                    Class="rounded-circle float-left mr-3" Click="@Reset"
+                            <RadzenImage Path="images/update1.png" Class="rounded-circle float-left mr-3" Click="@Reset"
                     Style="width: 40px; height: 40px; cursor:pointer" />
 
-            <!--RadzenButton  Click="@Reset" Icon="refresh" Text="Refresh" Style="border-radius:5px" ButtonStyle="ButtonStyle.Danger" /-->
+
           </div>
     </RadzenMenu>
 </RadzenCard>
 
 <br/>
 
-  <RadzenTabs Change=@OnChange  style="height: 504px; width: 80%; margin: 20px auto;"
-  RenderMode="TabRenderMode.Client" >
+  <RadzenTabs style="height: 504px; width: 90%; margin: 20px auto;"
+  RenderMode="TabRenderMode.Client">
         <Tabs>
 
         <RadzenTabsItem Text="Colaboradores">
 
-                <RadzenDataGrid style="" @ref="grid" IsLoading=@isLoading Count="@count" 
-                    Data="@employees" LoadData="@LoadData"  
+                <RadzenDataGrid style="" @ref="grid" Count="@count" 
+                    Data="@employees" LoadData="@LoadData" IsLoading=@isLoading
                    
                  AllowFiltering="true" AllowColumnResize="true" 
-        FilterMode="FilterMode.SimpleWithMenu" PageSize="3" AllowPaging="true" AllowSorting="false" 
+         PageSize="3" AllowPaging="true" AllowSorting="true" FilterMode="FilterMode.SimpleWithMenu"
         ColumnWidth="300px"  SelectionMode="DataGridSelectionMode.Multiple"
-        ShowPagingSummary="true" AllowColumnPicking="true"   FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive">
+        ShowPagingSummary="true" AllowColumnPicking="true">
 
         <Columns>
            
-           <RadzenDataGridColumn Filterable="true" TItem="Staff" Property="FirstName" 
-           Title="" Frozen="true" Width="150px">
+           <RadzenDataGridColumn TItem="Staff" Filterable="true" Title="Links" Frozen="true" Width="150px">
                  <Template Context="data">
 
-                    <RadzenImage Path="images/MsTeams.png" Click=@(() => OpenTeams(@data.StaffId)) Icon="check_circle"
+                    <RadzenImage Path="images/MsTeams.png" Click=@(() => OpenTeams(@data.UnitCode)) Icon="check_circle"
                     Style="width: 21px; height: 20px; cursor:pointer" /> &nbsp;
 
-                     <RadzenImage Path="images/MsOutlook02.png" Click=@(() => OpenOutlook(@data.StaffId)) Icon="check_circle"
+                     <RadzenImage Path="images/MsOutlook02.png" Click=@(() => OpenOutlook(@data.Email)) Icon="check_circle"
                     Style="width: 21px; height: 20px; cursor:pointer" /> &nbsp;
 
-                     <RadzenImage Path="images/MsPhone1.png" Click=@(() => OpenTeams(@data.StaffId)) Icon="check_circle"
+                     <RadzenImage Path="images/MsPhone1.png" Click=@(() => OpenTeams(@data.Extension)) Icon="check_circle"
                     Style="width: 21px; height: 20px; cursor:pointer" />
         
                     </Template>
            </RadzenDataGridColumn>
 
             <RadzenDataGridColumn TItem="Staff" Property="UnitCode" Title="Codigo" Width="150px"/>      
-            <RadzenDataGridColumn TItem="Staff" Property="FirstName" Title="" Width="250px">
-                <Template Context="dados">
-                    <RadzenLabel Text=@($"{dados.FirstName} " + $" {dados.Surname}") ></RadzenLabel>
-                </Template>
-            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Staff" Property="FirstName" Title="Nome" Width="250px"/>
+            <RadzenDataGridColumn TItem="Staff" Property="Surname" Title="Apelido" Width="150px"/>
             <RadzenDataGridColumn TItem="Staff" Property="Department" Title="Departamento" Width="250px" />
             <RadzenDataGridColumn TItem="Staff" Property="Email" Title="Email" FormatString="{0:d}" Width="250px" />
-            <RadzenDataGridColumn TItem="Staff" Property="LocationBranch" Title="Balcao" Width="250px" />
-            <!--RadzenDataGridColumn TItem="Staff" Property="Mobile1" Title="Celular" Width="250px" /-->
-            <RadzenDataGridColumn TItem="Staff" Property="Extension" Title="Extension" Width="250px" /> 
+            <RadzenDataGridColumn TItem="Staff" Property="LocationBranch" Title="Balcão" Width="250px" />
+            <RadzenDataGridColumn TItem="Staff" Property="Extension" Title="Extenção" Width="250px" /> 
             
-            <!--RadzenDataGridColumn Filterable="true" TItem="Staff" Property="Surname" 
-           Title="Apelido" Frozen="true" Width="150px"/-->
-             
           
         </Columns>
     </RadzenDataGrid>
@@ -119,22 +106,23 @@
 
                     <Template Context="order">
 
-                        <RadzenCard Style="width: 250px">
+                        <RadzenCard Style="width: 250px; border-radius:10px">
                             <div class="row">
                                 <div class="col-md-6 text-truncate">
 
                                     <RadzenBadge BadgeStyle="BadgeStyle.Success" Text=@($"{order.Name}") Class="mr-1"/>
-                                      <RadzenLink Path="@order.Ulr" Text="@order.Name" target="_blank" />
+                                    
+                                      
                                 </div>
                                 <div class="col-md-6 text-right">
-                                   
-                                     <RadzenBadge BadgeStyle="BadgeStyle.Danger" Text=@($"{order.AppId}") />
-
+                                    <RadzenBadge BadgeStyle="BadgeStyle.Danger" Text=@($"{order.AppId}") Class="mr-1"/>
+                                    
                                 </div>
                             </div>
 
-                            <hr style="border: none; background-color: rgba(0,0,0,.08); height: 1px; margin: 1rem 0;" />
-                            <b>@order.Description</b>
+                            <hr style="border: none; background-color: rgba(0,0,0,.08);" />
+                               <RadzenLink Path="@order.Ulr" Text="@order.Description" target="_blank" />
+                               
                            
                         </RadzenCard>
                      
@@ -146,36 +134,30 @@
          <RadzenTabsItem Text="Documentos & Tamplates">
             <div class="row">
                 <div class="col-md-3">
-                   
+  
                        <b style="color:red">Documentos e Formulários</b>
                    
                 </div>
 
                 <div class="col-md-9">
 
-                    <RadzenDataGrid @ref="docGrid" AllowFiltering="true" PageSize="3" AllowSorting="false" 
-                                 FilterMode="FilterMode.SimpleWithMenu" AllowPaging="true" 
-                                 SelectionMode="DataGridSelectionMode.Single" AllowColumnResize="true"
-                                 ShowPagingSummary="true" Data="@documents" TItem="App">
+                    <RadzenDataGrid @ref="docGrid" AllowFiltering="true" PageSize="3" AllowSorting="true" 
+                                  AllowPaging="true"  ShowPagingSummary="true" Data="@documents" TItem="App">
 
                         <Columns>
                            
-                            <RadzenDataGridColumn TItem="App" Property="Employee.LastName" Title="Tipo de Documento" Width="200px">
+                            <RadzenDataGridColumn TItem="App" Property="Employee.LastName" Title="Tipo de Documento" Width="250px">
                                 <Template Context="doc">
                                     <RadzenImage Path="images/file.png" style="width: 30px; height: 30px; border-radius: 8px; margin-right: 8px; float: left;" />
                                     <h5 class="mt-1 mb-0">@doc.Name</h5>
-                                    <p class="m-0" style="font-size: 0.8em;">@doc.Category</p>
+                                    <p class="m-0" style="font-size: 0.8em;">@doc.Description</p>
                                 </Template>
                             </RadzenDataGridColumn>
 
-                       
-                            <RadzenDataGridColumn TItem="App" Property="Freight" Title="Detalhes do Documento" Width="200px">
-                                <Template Context="doc">@(doc.Description)</Template>
-                            </RadzenDataGridColumn>
 
-                             <!--RadzenDataGridColumn TItem="App" Width="100px" Property="LastUpdate" Title="Data de Registo" FormatString="{0:d}" /-->
+                             <RadzenDataGridColumn TItem="App" Width="100px" Property="LastUpdate" Title="Data Registo" FormatString="{0:d}" />
 
-                            <RadzenDataGridColumn Width="50px" TItem="App" Property="AppId" Title="Acção">
+                            <RadzenDataGridColumn Width="40px" TItem="App" Property="AppId" Title="Acção">
                                 <Template Context="doc">
                                     <RadzenButton Click=@(() => DownloadFile(doc.Ulr)) Icon="check_circle" Style="border-radius:5px" ButtonStyle="ButtonStyle.Primary" />                           
                                     </Template>
@@ -193,17 +175,13 @@
     RadzenDataGrid<Staff> grid;
     IEnumerable<Staff> employees;
     IEnumerable<App> apps;
+    IEnumerable<App> documents;
     RadzenDataGrid<Department> deptoGrid;
     IEnumerable<Department> departments;
-    TabPosition tabPosition = TabPosition.Top;
+
     int staffId = 110;
-    App app;
     IEnumerable<string> entries;
     RadzenDataGrid<App> docGrid;
-    IEnumerable<App> documents;
-
-    FilterCaseSensitivity filterCaseSensitivity = FilterCaseSensitivity.CaseInsensitive;
-    LogicalFilterOperator logicalFilterOperator = LogicalFilterOperator.Or;
 
     bool isLoading = false;
     int count;
@@ -212,32 +190,21 @@
     {
 
         //employees = dbContext.Staffs.ToList();
-        departments = dbContext.Departments.ToList();
+        //departments = dbContext.Departments.ToList();
         apps = dbContext.Apps.ToList();
         //var query = dbContext.Apps.AsQueryable();
         //orders = query.ToList();
 
         //DialogService.OnOpen += Open;
-        //DialogService.OnClose += Close;
-        DialogService.OnOpen += Open;
-        DialogService.OnClose += Close;
+        //  DialogService.OnClose += Close;
 
-        entries = Directory.GetDirectories(HostEnvironment.ContentRootPath)
-     .Where(entry =>
-     {
-         var name = Path.GetFileName(entry);
-
-         return !name.StartsWith(".") && name != "bin" && name != "obj";
-     });
-
-       // documents = dbContext.Apps.ToList();
-          documents = dbContext.Apps.Where(o => o.Category == "Document" ).ToList();
+        documents = dbContext.Apps.Where(o => o.Category == "Document" ).ToList();
 
     }
 
     async Task DownloadFile(String url)
     {
-        
+
     }
 
     async Task Reset()
@@ -251,6 +218,7 @@
         isLoading = true;
 
         await Task.Yield();
+
 
         var query = dbContext.Staffs.AsQueryable();
 
@@ -278,68 +246,38 @@
 
     //==================== Codigo de Departments
 
-    async Task OpenTeams(int orderId)
+    async Task OpenTeams(String orderId)
     {
-         /*await DialogService.OpenAsync<Staffs>($"Codigo {orderId}",
-               new Dictionary<string, object>() { { "OrderID", orderId } },
-               new DialogOptions() { Width = "700px", Height = "570px" });*/
+        await DialogService.OpenAsync<Staffs>($"Codigo MZ {orderId}",
+              new Dictionary<string, object>() { { "OrderID", orderId } },
+              new DialogOptions() { Width = "700px", Height = "500px" });
     }
 
-     async Task OpenOutlook(int orderId)
+    async Task OpenOutlook(string orderId)
     {
-         /*await DialogService.OpenAsync<Staffs>($"Codigo {orderId}",
-               new Dictionary<string, object>() { { "OrderID", orderId } },
-               new DialogOptions() { Width = "700px", Height = "500px" });*/
+        /*await DialogService.OpenAsync<Staffs>($"Codigo {orderId}",
+              new Dictionary<string, object>() { { "OrderID", orderId } },
+              new DialogOptions() { Width = "700px", Height = "500px" });*/
     }
 
-      async Task OpenBrithday()
+    async Task OpenBrithday()
     {
-        
+          string date = DateTime.UtcNow.ToString("MM");
+      
           //DateTime dateObject = DateTime.ParseExact(DateTime.UtcNow.ToString("d"),"yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture);
     
           await DialogService.OpenAsync<DialogBirthday>($"Aniversarios do mês, {DateTime.UtcNow.ToString("MMMM")}",
-               new Dictionary<string, object>() { { "StaffId", staffId } },
-               new DialogOptions() { Width = "750px", Height = "500px", Resizable = true, Draggable = true });
+               new Dictionary<string, object>() { { "StaffId", staffId}},
+               new DialogOptions() { Width = "750px", Height = "550px", Resizable = true, Draggable = true });
 
-              
-               //string month = 
-
-        //Console.WriteLine("The current date is {0}", date);
     }
-
- 
-    void LoadFiles(TreeExpandEventArgs args)
-    {
-        var directory = args.Value as string;
-
-        args.Children.Data = Directory.EnumerateFileSystemEntries(directory);
-        args.Children.Text = GetTextForNode;
-        args.Children.HasChildren = (path) => Directory.Exists((string)path);
-        args.Children.Template = FileOrFolderTemplate;
-    }
-
-    string GetTextForNode(object data)
-    {
-        return Path.GetFileName((string)data);
-    }
-
-    RenderFragment<RadzenTreeItem> FileOrFolderTemplate = (context) => builder =>
-    {
-        string path = context.Value as string;
-        bool isDirectory = Directory.Exists(path);
-
-        builder.OpenComponent<RadzenIcon>(0);
-        builder.AddAttribute(1, nameof(RadzenIcon.Icon), isDirectory ? "folder" : "\\ubamz01");
-        builder.CloseComponent();
-        builder.AddContent(3, context.Text);
-    };
 
    
      public void Dispose()
     {
         // The DialogService is a singleton so it is advisable to unsubscribe.
         DialogService.OnOpen -= Open;
-        DialogService.OnClose -= Close;
+       //DialogService.OnClose -= Close;
     }
 
      void Open(string title, Type type, Dictionary<string, object> parameters, DialogOptions options)
@@ -347,42 +285,6 @@
         //console.Log("Dialog opened");
     }
 
-    void Close(dynamic result)
-    {
-        //console.Log($"Dialog closed");
-    }
+   
 
-    void OnParentClicked(MenuItemEventArgs args)
-    {
-        Console.Write($"{args.Text} clicked from parent");
-    }
-
-    void OnChildClicked(MenuItemEventArgs args)
-    {
-        Console.Write($"{args.Text} from child clicked");
-    }
-
-    void OnChange(object value, string name)
-    {
-        Console.Write($"{name} value changed to {value}");
-    }
-
-    void OnLoadData(LoadDataArgs args)
-    {
-        Console.Write($"LoadData with filter: {args.Filter}");
-
-        //customers = dbContext.Staffs.Where(c => c.Surname.Contains(args.Filter) || c.FirstName.Contains(args.Filter)).ToList();
-
-        InvokeAsync(StateHasChanged);
-    }
-
-     void OnClick(string buttonName)
-    {
-        Console.Write($"{buttonName} clicked");
-    }
-
-    void OnChange(int index)
-    {
-        Console.Write($"Tab with index {index} was selected.");
-    }
 }

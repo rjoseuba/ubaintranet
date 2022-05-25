@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yfi/UmpY0rrZZrvWguRMg48Pt0qs7zU0geNVWX5Juss=",
+  "Hash": "gV09mdyOWgjlnItr+gBXUwsPt9R2pOPxVukYjpwOtP0=",
   "Source": "Intranet",
   "BasePath": "_content/Intranet",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "Intranet\\wwwroot",
       "Source": "Intranet",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "Pattern": "**"
     }
@@ -476,10 +476,10 @@
       "OriginalItemSpec": "C:\\Users\\Raimundo Jose\\.nuget\\packages\\radzen.blazor\\3.18.7\\staticwebassets\\Radzen.Blazor.js"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\css\\humanistic.css",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\css\\humanistic.css",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/css/humanistic.css",
       "AssetKind": "All",
@@ -493,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\humanistic.css"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\css\\material.css",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\css\\material.css",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/css/material.css",
       "AssetKind": "All",
@@ -510,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\material.css"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\css\\material-dark.css",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\css\\material-dark.css",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/css/material-dark.css",
       "AssetKind": "All",
@@ -527,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\material-dark.css"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\css\\styles.css",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\css\\styles.css",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/css/styles.css",
       "AssetKind": "All",
@@ -544,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\styles.css"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\css\\styles-generated.css",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\css\\styles-generated.css",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/css/styles-generated.css",
       "AssetKind": "All",
@@ -561,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\styles-generated.css"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\fonts\\MaterialIcons-Regular.woff",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\fonts\\MaterialIcons-Regular.woff",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/fonts/MaterialIcons-Regular.woff",
       "AssetKind": "All",
@@ -578,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\MaterialIcons-Regular.woff"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\fonts\\roboto-regular.woff",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\fonts\\roboto-regular.woff",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/fonts/roboto-regular.woff",
       "AssetKind": "All",
@@ -595,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\roboto-regular.woff"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\fonts\\roboto-v15-latin-300.woff",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\fonts\\roboto-v15-latin-300.woff",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/fonts/roboto-v15-latin-300.woff",
       "AssetKind": "All",
@@ -612,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\roboto-v15-latin-300.woff"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\fonts\\roboto-v15-latin-700.woff",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\fonts\\roboto-v15-latin-700.woff",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/fonts/roboto-v15-latin-700.woff",
       "AssetKind": "All",
@@ -629,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\roboto-v15-latin-700.woff"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\fonts\\roboto-v15-latin-regular.woff",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\fonts\\roboto-v15-latin-regular.woff",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/fonts/roboto-v15-latin-regular.woff",
       "AssetKind": "All",
@@ -646,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\roboto-v15-latin-regular.woff"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Black.woff",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Black.woff",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/fonts/SourceSansPro-Black.woff",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-Black.woff"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\fonts\\SourceSansPro-BlackIt.woff",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\fonts\\SourceSansPro-BlackIt.woff",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/fonts/SourceSansPro-BlackIt.woff",
       "AssetKind": "All",
@@ -680,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-BlackIt.woff"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Bold.woff",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Bold.woff",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/fonts/SourceSansPro-Bold.woff",
       "AssetKind": "All",
@@ -697,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-Bold.woff"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\fonts\\SourceSansPro-BoldIt.woff",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\fonts\\SourceSansPro-BoldIt.woff",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/fonts/SourceSansPro-BoldIt.woff",
       "AssetKind": "All",
@@ -714,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-BoldIt.woff"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\fonts\\SourceSansPro-ExtraLight.woff",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\fonts\\SourceSansPro-ExtraLight.woff",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/fonts/SourceSansPro-ExtraLight.woff",
       "AssetKind": "All",
@@ -731,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-ExtraLight.woff"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\fonts\\SourceSansPro-ExtraLightIt.woff",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\fonts\\SourceSansPro-ExtraLightIt.woff",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/fonts/SourceSansPro-ExtraLightIt.woff",
       "AssetKind": "All",
@@ -748,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-ExtraLightIt.woff"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\fonts\\SourceSansPro-It.woff",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\fonts\\SourceSansPro-It.woff",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/fonts/SourceSansPro-It.woff",
       "AssetKind": "All",
@@ -765,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-It.woff"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Light.woff",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Light.woff",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/fonts/SourceSansPro-Light.woff",
       "AssetKind": "All",
@@ -782,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-Light.woff"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\fonts\\SourceSansPro-LightIt.woff",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\fonts\\SourceSansPro-LightIt.woff",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/fonts/SourceSansPro-LightIt.woff",
       "AssetKind": "All",
@@ -799,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-LightIt.woff"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Regular.woff",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Regular.woff",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/fonts/SourceSansPro-Regular.woff",
       "AssetKind": "All",
@@ -816,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-Regular.woff"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Semibold.woff",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Semibold.woff",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/fonts/SourceSansPro-Semibold.woff",
       "AssetKind": "All",
@@ -833,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-Semibold.woff"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\fonts\\SourceSansPro-SemiboldIt.woff",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\fonts\\SourceSansPro-SemiboldIt.woff",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/fonts/SourceSansPro-SemiboldIt.woff",
       "AssetKind": "All",
@@ -850,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-SemiboldIt.woff"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\icon.svg",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\icon.svg",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/icon.svg",
       "AssetKind": "All",
@@ -867,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\icon.svg"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\logo.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\logo.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/logo.png",
       "AssetKind": "All",
@@ -884,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\logo.png"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\UBA_logo.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\UBA_logo.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/UBA_logo.png",
       "AssetKind": "All",
@@ -901,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\UBA_logo.png"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\UBAlogo.svg",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\UBAlogo.svg",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/UBAlogo.svg",
       "AssetKind": "All",
@@ -918,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\UBAlogo.svg"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\assets\\user.svg",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\assets\\user.svg",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "assets/user.svg",
       "AssetKind": "All",
@@ -935,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\user.svg"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\favicon.ico",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -952,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\avatar.jpg",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\avatar.jpg",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/avatar.jpg",
       "AssetKind": "All",
@@ -969,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\images\\avatar.jpg"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\avatar1.jpg",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\avatar1.jpg",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/avatar1.jpg",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\images\\avatar1.jpg"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\avatar2.jpg",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\avatar2.jpg",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/avatar2.jpg",
       "AssetKind": "All",
@@ -1003,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\images\\avatar2.jpg"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\avatar3.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\avatar3.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/avatar3.png",
       "AssetKind": "All",
@@ -1020,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\images\\avatar3.png"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\birthday.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\birthday.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/birthday.png",
       "AssetKind": "All",
@@ -1037,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\images\\birthday.png"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\depto.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\depto.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/depto.png",
       "AssetKind": "All",
@@ -1054,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\images\\depto.png"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\depto1.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\depto1.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/depto1.png",
       "AssetKind": "All",
@@ -1071,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\images\\depto1.png"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\depto2.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\depto2.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/depto2.png",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\images\\depto2.png"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\file.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\file.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/file.png",
       "AssetKind": "All",
@@ -1105,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\images\\file.png"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\file1.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\file1.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/file1.png",
       "AssetKind": "All",
@@ -1122,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\images\\file1.png"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\folder.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\folder.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/folder.png",
       "AssetKind": "All",
@@ -1139,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\images\\folder.png"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\mail1.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\mail1.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/mail1.png",
       "AssetKind": "All",
@@ -1156,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\images\\mail1.png"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\mail2.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\mail2.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/mail2.png",
       "AssetKind": "All",
@@ -1173,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\images\\mail2.png"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\MsOutlook.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\MsOutlook.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/MsOutlook.png",
       "AssetKind": "All",
@@ -1190,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\images\\MsOutlook.png"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\MsOutlook02.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\MsOutlook02.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/MsOutlook02.png",
       "AssetKind": "All",
@@ -1207,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\images\\MsOutlook02.png"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\MsPhone.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\MsPhone.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/MsPhone.png",
       "AssetKind": "All",
@@ -1224,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\images\\MsPhone.png"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\MsPhone1.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\MsPhone1.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/MsPhone1.png",
       "AssetKind": "All",
@@ -1241,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\images\\MsPhone1.png"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\MsTeams.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\MsTeams.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/MsTeams.png",
       "AssetKind": "All",
@@ -1258,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\images\\MsTeams.png"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\update.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\update.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/update.png",
       "AssetKind": "All",
@@ -1275,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\images\\update.png"
     },
     {
-      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\images\\update1.png",
+      "Identity": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\images\\update1.png",
       "SourceId": "Intranet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\IntranetWeb\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Raimundo Jose\\Documents\\ubaintranet\\server\\wwwroot\\",
       "BasePath": "_content/Intranet",
       "RelativePath": "images/update1.png",
       "AssetKind": "All",
