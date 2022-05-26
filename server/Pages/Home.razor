@@ -31,7 +31,21 @@
     <RadzenMenu  Style="">
 
         <div class="col-md-6">
-            <RadzenAutoComplete Placeholder="Buscar funcionario..." Style="width: 100%;" />
+        
+                <RadzenDropDownDataGrid TValue="string" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" AllowFiltering="true" AllowClear="true"
+                                        Data=@(filters) Style="width: 100%" AllowColumnResize="true"
+                                        TextProperty="Staffs" ValueProperty="UnitCode" AllowFilteringByAllStringColumns="true"
+                                        Change=@(args => OnChange(args, "find all"))>
+                    <Columns>
+                      
+                         <RadzenDataGridColumn TItem="Staff" Property="UnitCode" Title="Codigo" Width="100px"/>      
+                        <RadzenDataGridColumn TItem="Staff" Property="FirstName" Title="Nome" Width="200px"/>
+                        <RadzenDataGridColumn TItem="Staff" Property="Surname" Title="Apelido" Width="100px"/>
+            
+                    </Columns>
+                </RadzenDropDownDataGrid>
+       
+
           </div>
 
           <div class="col-md-6">
@@ -40,12 +54,8 @@
                     Style="width: 40px; height: 40px; cursor:pointer" />
 
                        <RadzenImage Path="images/depto2.png" 
-                    Class="rounded-circle float-left mr-3" Click=@(() => OpenBrithday())
-                    Style="width: 40px; height: 40px; cursor:pointer" />
-
-                            <RadzenImage Path="images/update1.png" Class="rounded-circle float-left mr-3" Click="@Reset"
-                    Style="width: 40px; height: 40px; cursor:pointer" />
-
+                    Class="rounded-circle float-left mr-3" Click=@(() => OpenDepartments())
+                    Style="width: 50px; height: 50px; cursor:pointer" />
 
           </div>
     </RadzenMenu>
@@ -59,13 +69,15 @@
 
         <RadzenTabsItem Text="Colaboradores">
 
+            <RadzenButton Click=@Reset Icon="refresh" ButtonStyle="ButtonStyle.Primary" Style="border-radius:5px" />
+            <p></p>
                 <RadzenDataGrid style="" @ref="grid" Count="@count" 
                     Data="@employees" LoadData="@LoadData" IsLoading=@isLoading
                    
                  AllowFiltering="true" AllowColumnResize="true" 
          PageSize="3" AllowPaging="true" AllowSorting="true" FilterMode="FilterMode.SimpleWithMenu"
         ColumnWidth="300px"  SelectionMode="DataGridSelectionMode.Multiple"
-        ShowPagingSummary="true" AllowColumnPicking="true">
+        ShowPagingSummary="true" AllowColumnPicking="false">
 
         <Columns>
            
@@ -100,35 +112,81 @@
 
             <RadzenTabsItem Text="Aplicativos & Links">
 
-                <RadzenDataList PageSize="6" WrapItems="true" AllowPaging="true" 
-                                Data="@apps"  TItem="App" 
-                                ShowPagingSummary="true">
+                  <div class="row">
+                <div class="col-md-6">
+
+                    <RadzenFieldset Text="In Country App" Style="border-radius:5px; color:red">
+
+                         <RadzenDataList PageSize="6" WrapItems="true" AllowPaging="true" 
+                                Data="@countryapps"  TItem="App" 
+                                ShowPagingSummary="false">
 
                     <Template Context="order">
+                           <a href=@($"{order.Ulr}") target="_blank" style="width:47%; text-decoration:none" class="mr-2 mb-2">
 
-                        <RadzenCard Style="width: 250px; border-radius:10px">
+                        <RadzenCard Style="border-radius:10px">
                             <div class="row">
-                                <div class="col-md-6 text-truncate">
+                                <div class="col-md-9 text-truncate">
+                                     <RadzenBadge BadgeStyle="BadgeStyle.Secondary"  Text=@($"{order.AppId}") Class="mr-1"/>
+                                       <b>@order.Name</b>
+                                 </div>
 
-                                    <RadzenBadge BadgeStyle="BadgeStyle.Success" Text=@($"{order.Name}") Class="mr-1"/>
-                                    
-                                      
+                                 <div class="col-md-3 text-right">
+                                     <RadzenBadge BadgeStyle="BadgeStyle.Info" Text="#" Class="mr-1"/>
+                                 
                                 </div>
-                                <div class="col-md-6 text-right">
-                                    <RadzenBadge BadgeStyle="BadgeStyle.Danger" Text=@($"{order.AppId}") Class="mr-1"/>
-                                    
-                                </div>
+
+                                <!--p class="text-truncate"><RadzenLink Path="@order.Ulr" Text="@order.Description" target="_blank" /></!--p-->
+                                   
                             </div>
-
-                            <hr style="border: none; background-color: rgba(0,0,0,.08);" />
-                               <RadzenLink Path="@order.Ulr" Text="@order.Description" target="_blank" />
-                               
-                           
+                            
                         </RadzenCard>
+                        </a>
                      
                     </Template>
                 </RadzenDataList>
-     
+
+                    </RadzenFieldset>
+                </div>
+
+                 <div class="col-md-6">
+
+                    <RadzenFieldset Text="Group Apps"  Style="border-radius:5px;">
+
+                         <RadzenDataList PageSize="6" WrapItems="true" AllowPaging="true" 
+                                Data="@groupapps"  TItem="App" 
+                                ShowPagingSummary="false">
+
+                    <Template Context="order">
+                        <a href=@($"{order.Ulr}") target="_blank" style="width:47%;text-decoration:none" class="mr-2 mb-2">
+
+                        <RadzenCard Style="border-radius:10px;">
+                            <div class="row">
+                                <div class="col-md-9 text-truncate">
+                                     <RadzenBadge BadgeStyle="BadgeStyle.Danger" Text=@($"{order.AppId}") Class="mr-1"/>
+                                    <b>@order.Name</b>
+                                   
+                                </div>
+                                <div class="col-md-3 text-right">
+                                      <RadzenBadge BadgeStyle="BadgeStyle.Info" Text="#" Class="mr-1"/>
+                                   
+                                </div>
+                                 
+                            </div>
+                           
+                        </RadzenCard>
+                        </a>
+                    
+                        
+                    </Template>
+                </RadzenDataList>
+
+                  
+                    </RadzenFieldset>
+
+                </div>
+              </div>
+
               </RadzenTabsItem>
 
          <RadzenTabsItem Text="Documentos & Tamplates">
@@ -174,12 +232,15 @@
 
     RadzenDataGrid<Staff> grid;
     IEnumerable<Staff> employees;
-    IEnumerable<App> apps;
+    IEnumerable<Staff> filters;
+    IEnumerable<App> countryapps;
+    IEnumerable<App> groupapps;
     IEnumerable<App> documents;
     RadzenDataGrid<Department> deptoGrid;
     IEnumerable<Department> departments;
+    RadzenDropDownDataGrid<IEnumerable<string>> sgrid;
 
-    int staffId = 110;
+    int staffId = 115;
     IEnumerable<string> entries;
     RadzenDataGrid<App> docGrid;
 
@@ -189,9 +250,12 @@
     protected override void OnInitialized()
     {
 
-        //employees = dbContext.Staffs.ToList();
+        filters= dbContext.Staffs.ToList();
         //departments = dbContext.Departments.ToList();
-        apps = dbContext.Apps.ToList();
+        //apps = dbContext.Apps.ToList();
+
+        countryapps = dbContext.Apps.Where(o => o.Category == "incountry" ).ToList();
+        groupapps = dbContext.Apps.Where(o => o.Category == "ubagroup" ).ToList();
         //var query = dbContext.Apps.AsQueryable();
         //orders = query.ToList();
 
@@ -248,8 +312,8 @@
 
     async Task OpenTeams(String orderId)
     {
-        await DialogService.OpenAsync<Staffs>($"Codigo MZ {orderId}",
-              new Dictionary<string, object>() { { "OrderID", orderId } },
+        await DialogService.OpenAsync<AppServices>($"Funcionario - {orderId}",
+              new Dictionary<string, object>() { { "StaffId", orderId } },
               new DialogOptions() { Width = "700px", Height = "500px" });
     }
 
@@ -262,14 +326,19 @@
 
     async Task OpenBrithday()
     {
-          string date = DateTime.UtcNow.ToString("MM");
-      
-          //DateTime dateObject = DateTime.ParseExact(DateTime.UtcNow.ToString("d"),"yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture);
-    
-          await DialogService.OpenAsync<DialogBirthday>($"Aniversarios do mês, {DateTime.UtcNow.ToString("MMMM")}",
-               new Dictionary<string, object>() { { "StaffId", staffId}},
-               new DialogOptions() { Width = "750px", Height = "550px", Resizable = true, Draggable = true });
+        string date = DateTime.UtcNow.ToString("MM");
 
+        //DateTime dateObject = DateTime.ParseExact(DateTime.UtcNow.ToString("d"),"yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture);
+
+        await DialogService.OpenAsync<DialogBirthday>($"Aniversarios do mês, {DateTime.UtcNow.ToString("MMMM")}",
+             new Dictionary<string, object>() { { "StaffId", staffId}},
+             new DialogOptions() { Width = "750px", Height = "550px", Resizable = true, Draggable = true });
+
+    }
+
+    DbFunctionAttribute OpenDepartments()
+    {
+        
     }
 
    
@@ -285,6 +354,12 @@
         //console.Log("Dialog opened");
     }
 
+      void OnChange(object value, string name)
+    {
+        var str = value is IEnumerable<object> ? string.Join(", ", (IEnumerable<object>)value) : value;
+
+       // console.Log($"{name} value changed to {str}");
+    }
    
 
 }

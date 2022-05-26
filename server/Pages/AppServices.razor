@@ -1,0 +1,69 @@
+﻿@page "/appservices/{StaffId}"
+
+@using Radzen
+@using Intranet.Models.Kkk
+@using Microsoft.EntityFrameworkCore
+@using Intranet.Controllers
+@using Intranet.Data
+@using System.Text.Encodings.Web;
+@using Microsoft.Data.SqlClient;
+@using System.Collections.Generic;
+@using System.Net.Http;
+@using System.Threading.Tasks;
+@using Microsoft.AspNetCore.Components
+@inherits Intranet.Pages.StaffsComponent
+@inject Radzen.DialogService dialogService
+@inject KkkContext dbContext
+
+<div class="row">
+    
+    <div class="col-lg-6 d-flex">
+        
+        <RadzenCard Style="width: 100%;">
+     
+                <RadzenImage Path="images/avatar.jpg" Class="rounded-circle float-left mt-1 mr-3" 
+                Style="width: 80px; height: 80px;" />
+                
+                <RadzenBadge BadgeStyle="BadgeStyle.Success" Text=@($"{staff.FirstName} " + $" {staff.Surname}")/>
+                    <div>Departamento:@staff.Department</div>
+                    <div>Email:@staff.Email</div>
+                    <div>Extensão:@staff.Extension</div>
+                  
+        </RadzenCard>
+    </div>
+</div>
+
+@code {
+
+    [Parameter] public DateTime DayBirthday { get; set; }
+    [Parameter] public string StaffId { get; set; }
+ 
+
+    Staff staff;
+    string myDateTime = DateTime.Now.Month.ToString();
+    DateTime todays = DateTime.Now;
+
+    DateTime today = DateTime.ParseExact("20220501","yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture);
+
+    IEnumerable<Staff> birthday;
+    IEnumerable<Staff> mBirthday;
+
+    int staffId = 115;
+    protected override void OnInitialized()
+    {
+        //birthday = dbContext.Staffs.Where(s => s.DateBirth == DayBirthday).ToList();
+        mBirthday = dbContext.Staffs.Where(s => s.DateBirth <= today).ToList();
+        staff = dbContext.Staffs.Where(o => o.UnitCode == StaffId).FirstOrDefault();
+    }
+
+    public int getMonth(DateTime d)
+    {
+        return int.Parse(d.Month.ToString());
+    }
+
+    public string getStringMonth(DateTime data)
+    {
+        return  data.Month.ToString("MM");
+    }
+}
+

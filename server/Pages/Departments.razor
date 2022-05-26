@@ -29,7 +29,7 @@
           <Columns>
             <RadzenDataGridColumn TItem="Intranet.Models.Kkk.Department" Property="DeptoId" SortProperty="Department1.Description" GroupProperty="Department1.Description" FilterProperty="Department1.Description" Title="Department">
               <Template Context="data">
-              @(data.Department1?.Description)
+              @(data.Department1?.DeptoId)
               </Template>
             </RadzenDataGridColumn>
             <RadzenDataGridColumn TItem="Intranet.Models.Kkk.Department" Property="Description" Title="Description">

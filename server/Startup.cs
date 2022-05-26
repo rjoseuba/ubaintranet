@@ -75,7 +75,6 @@ namespace Intranet
 
         partial void OnConfigure(IApplicationBuilder app, IWebHostEnvironment env);
         partial void OnConfiguring(IApplicationBuilder app, IWebHostEnvironment env);
-
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             OnConfiguring(app, env);

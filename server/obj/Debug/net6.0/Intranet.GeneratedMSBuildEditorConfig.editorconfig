@@ -35,12 +35,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Raimundo Jose/Documents/ubaintranet/server/Pages/AppServices.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwU2VydmljZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Raimundo Jose/Documents/ubaintranet/server/Pages/Appstore.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwc3RvcmUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Raimundo Jose/Documents/ubaintranet/server/Pages/Brithday.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnJpdGhkYXkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Raimundo Jose/Documents/ubaintranet/server/Pages/Contacts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Raimundo Jose/Documents/ubaintranet/server/Pages/Departments.razor]
